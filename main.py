@@ -22,7 +22,7 @@ model = tf.keras.Sequential([
     tf.keras.layers.Dense(10, activation='softmax')
 ])
 
-model.compile(optimizer="sgd", loss='categorical_crossentropy', metrics=['accuracy'])
+model.compile(optimizer="adam", loss='categorical_crossentropy', metrics=['accuracy'])
 model.fit(x_train, y_train, batch_size=128, epochs=20, verbose=True, validation_split=.1)
 loss, accuracy  = model.evaluate(x_test, y_test, verbose=True)
 print("loss: ", loss)
